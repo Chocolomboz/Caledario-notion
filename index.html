@@ -2,41 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Calendario Notion</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f4f9;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .wrapper {
-      width: 400px; /* 👉 aquí puedes cambiar el ancho */
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    #calendari {
-      text-align: center;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 10px;
-      font-size: 12px;
-    }
-
-    footer a {
-      text-decoration: none;
-      color: #888;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendario</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="wrapper">
@@ -44,41 +12,6 @@
     <footer><a href="http://boudra.me/" target="_blank">boudra.me</a></footer>
   </div>
 
-  <script>
-    (function() {
-      function createCalendar() {
-        const now = new Date();
-        const month = now.toLocaleString('es-ES', { month: 'long' });
-        const year = now.getFullYear();
-
-        let html = `<h2>${month.charAt(0).toUpperCase() + month.slice(1)} ${year}</h2>`;
-        html += `<table style="width:100%;border-collapse:collapse;text-align:center">`;
-        html += `<tr>
-          <th>Lun</th><th>Mar</th><th>Mié</th>
-          <th>Jue</th><th>Vie</th><th>Sáb</th><th>Dom</th>
-        </tr>`;
-
-        const firstDay = new Date(now.getFullYear(), now.getMonth(), 1);
-        const lastDay = new Date(now.getFullYear(), now.getMonth() + 1, 0);
-        let startDay = firstDay.getDay() || 7;
-
-        html += "<tr>";
-        for (let i = 1; i < startDay; i++) {
-          html += "<td></td>";
-        }
-
-        for (let d = 1; d <= lastDay.getDate(); d++) {
-          const today = (d === now.getDate()) ? "style='background:#eee;border-radius:50%'" : "";
-          html += `<td ${today}>${d}</td>`;
-          if ((d + startDay - 1) % 7 === 0) html += "</tr><tr>";
-        }
-
-        html += "</tr></table>";
-        document.getElementById("calendari").innerHTML = html;
-      }
-
-      createCalendar();
-    })();
-  </script>
+  <script src="script.js" defer></script>
 </body>
 </html>

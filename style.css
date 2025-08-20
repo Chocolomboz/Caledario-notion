@@ -1,0 +1,60 @@
+/* --- Estilos generales --- */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* --- Calendario --- */
+#calendari {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  text-align: center;
+}
+
+#calendari div {
+  padding: 12px;
+  border-radius: 6px;
+}
+
+#calendari .header {
+  font-weight: bold;
+  color: #555;
+}
+
+#calendari .day {
+  background: #f0f0f0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#calendari .day:hover {
+  background: #ffcccb;
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #ff4444;
+  font-weight: bold;
+}
